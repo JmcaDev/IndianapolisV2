@@ -1,4 +1,11 @@
 <?php
+require '../../includes/funciones.php';
+$auth = estadoAutenticado();
+
+if(!$auth){
+  header('Location: /indianapolis');
+}
+
 //Base de datos
 require '../../includes/config/database.php';
 
@@ -128,9 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 
-
-
-require '../../includes/funciones.php';
 
 incluirTemplate('auxiliarHeader');
 ?>

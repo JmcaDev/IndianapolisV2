@@ -1,9 +1,10 @@
 <?php
+require '../../includes/funciones.php';
+$auth = estadoAutenticado();
 
-// echo "<pre>";
-// var_dump($_GET);
-// echo "</pre>";
-
+if(!$auth){
+  header('Location: /indianapolis');
+}
 //Validar id
 $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -160,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-require '../../includes/funciones.php';
+
 
 incluirTemplate('auxiliarHeader');
 ?>
